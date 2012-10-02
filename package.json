@@ -1,0 +1,17 @@
+{
+	"name": "moneydesktop",
+	"author": "JohnnyT",
+	"description": "GitHub Pages site for moneydesktop.github.com",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/moneydesktop/moneydesktop.github.com"
+	},
+	"engines": {
+		"node": "~0.6.8"
+	},
+	"dependencies": {
+		"grunt" : "latest",
+		"grunt-exec" : "latest"
+	}
+}
