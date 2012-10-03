@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     amber: {
-      'js/amber-compiled': []
+      'js/amber-compiled': ['GitHubPages']
     },
 
     concat: {
