@@ -1,9 +1,9 @@
 Smalltalk current createPackage: 'GitHubPages' properties: #{}!
-Widget subclass: #GitHubOrgPage
+Widget subclass: #RepoPageWidget
 	instanceVariableNames: 'orgName repos'
 	package: 'GitHubPages'!
 
-!GitHubOrgPage methodsFor: 'accessing'!
+!RepoPageWidget methodsFor: 'accessing'!
 
 addRepo: aRepo
 	self repos add: aRepo
@@ -22,7 +22,7 @@ repos
     ^repos.
 ! !
 
-!GitHubOrgPage methodsFor: 'fetching'!
+!RepoPageWidget methodsFor: 'fetching'!
 
 fetchAndRenderRepos
 	self initializeRepos.
@@ -40,13 +40,13 @@ fetchRepos
 		callback: [ :response | response data do: [ :repo | self addRepo: repo ] ]
 ! !
 
-!GitHubOrgPage methodsFor: 'initialization'!
+!RepoPageWidget methodsFor: 'initialization'!
 
 initializeRepos
 	repos := Array new
 ! !
 
-!GitHubOrgPage methodsFor: 'rendering'!
+!RepoPageWidget methodsFor: 'rendering'!
 
 renderContentOn: html
 	html div class: 'span9'; with: [
@@ -74,7 +74,7 @@ renderSidebarOn: html
 	html div class: 'span3 well'; with: [ html h3: 'Sidebar' ]
 ! !
 
-!GitHubOrgPage class methodsFor: 'instance creation'!
+!RepoPageWidget class methodsFor: 'instance creation'!
 
 newForOrg: aString
 	^self new

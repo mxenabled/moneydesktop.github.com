@@ -1,5 +1,5 @@
 smalltalk.addPackage('GitHubPages', {});
-smalltalk.addClass('GitHubOrgPage', smalltalk.Widget, ['orgName', 'repos'], 'GitHubPages');
+smalltalk.addClass('RepoPageWidget', smalltalk.Widget, ['orgName', 'repos'], 'GitHubPages');
 smalltalk.addMethod(
 "_addRepo_",
 smalltalk.method({
@@ -9,7 +9,7 @@ var self=this;
 smalltalk.send(smalltalk.send(self,"_repos",[]),"_add_",[aRepo]);
 return self}
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_fetchAndRenderRepos",
@@ -26,7 +26,7 @@ return smalltalk.send(self,"_appendToJQuery_",[smalltalk.send("#app","_asJQuery"
 })]);
 return self}
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_fetchRepos",
@@ -42,7 +42,7 @@ return smalltalk.send(self,"_addRepo_",[repo]);
 })]);
 return self}
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_initializeRepos",
@@ -53,7 +53,7 @@ var self=this;
 self["@repos"]=smalltalk.send((smalltalk.Array || Array),"_new",[]);
 return self}
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_orgName",
@@ -71,7 +71,7 @@ $1=self["@orgName"];
 return $1;
 }
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_orgName_",
@@ -82,7 +82,7 @@ var self=this;
 self["@orgName"]=aString;
 return self}
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_renderContentOn_",
@@ -103,7 +103,7 @@ return $4;
 })]);
 return self}
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_renderOn_",
@@ -125,7 +125,7 @@ return $4;
 })]);
 return self}
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_renderReposOn_",
@@ -159,7 +159,7 @@ return $2;
 })]);
 return self}
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_renderSidebarOn_",
@@ -175,7 +175,7 @@ return smalltalk.send(html,"_h3_",["Sidebar"]);
 })]);
 return self}
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_repos",
@@ -191,7 +191,7 @@ self["@repos"];
 return self["@repos"];
 }
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 
 smalltalk.addMethod(
@@ -208,7 +208,7 @@ $1=$3;
 return $1;
 }
 }),
-smalltalk.GitHubOrgPage.klass);
+smalltalk.RepoPageWidget.klass);
 
 smalltalk.addMethod(
 "_renderOrg_",
@@ -219,6 +219,6 @@ var self=this;
 smalltalk.send(smalltalk.send(self,"_newForOrg_",[aString]),"_fetchAndRenderRepos",[]);
 return self}
 }),
-smalltalk.GitHubOrgPage.klass);
+smalltalk.RepoPageWidget.klass);
 
 

@@ -1,5 +1,5 @@
 smalltalk.addPackage('GitHubPages', {});
-smalltalk.addClass('GitHubOrgPage', smalltalk.Widget, ['orgName', 'repos'], 'GitHubPages');
+smalltalk.addClass('RepoPageWidget', smalltalk.Widget, ['orgName', 'repos'], 'GitHubPages');
 smalltalk.addMethod(
 "_addRepo_",
 smalltalk.method({
@@ -14,7 +14,7 @@ source: "addRepo: aRepo\x0a\x09self repos add: aRepo",
 messageSends: ["add:", "repos"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_fetchAndRenderRepos",
@@ -36,7 +36,7 @@ source: "fetchAndRenderRepos\x0a\x09self initializeRepos.\x0a\x09jQuery\x0a\x09\
 messageSends: ["initializeRepos", "getJSON:callback:", ",", "orgName", "do:", "addRepo:", "data", "appendToJQuery:", "asJQuery"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_fetchRepos",
@@ -57,7 +57,7 @@ source: "fetchRepos\x0a\x09self initializeRepos.\x0a\x09jQuery\x0a\x09\x09getJSO
 messageSends: ["initializeRepos", "getJSON:callback:", ",", "orgName", "do:", "addRepo:", "data"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_initializeRepos",
@@ -73,7 +73,7 @@ source: "initializeRepos\x0a\x09repos := Array new",
 messageSends: ["new"],
 referencedClasses: ["Array"]
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_orgName",
@@ -96,7 +96,7 @@ source: "orgName\x0a\x09^ orgName ifNil: [ orgName := 'unknown' ]",
 messageSends: ["ifNil:"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_orgName_",
@@ -112,7 +112,7 @@ source: "orgName: aString\x0a\x09orgName := aString",
 messageSends: [],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_renderContentOn_",
@@ -138,7 +138,7 @@ source: "renderContentOn: html\x0a\x09html div class: 'span9'; with: [\x0a\x09\x
 messageSends: ["class:", "div", "with:", "ul", "renderReposOn:"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_renderOn_",
@@ -165,7 +165,7 @@ source: "renderOn: html\x0a\x09html div class: 'container-fluid'; with: [\x0a\x0
 messageSends: ["class:", "div", "with:", "renderSidebarOn:", "renderContentOn:"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_renderReposOn_",
@@ -204,7 +204,7 @@ source: "renderReposOn: html\x0a\x09self repos do: [ :repo |\x0a\x09\x09html li 
 messageSends: ["do:", "class:", "li", "with:", "div", "h3:", "name", "p", "language", "p:", "description", "repos"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_renderSidebarOn_",
@@ -225,7 +225,7 @@ source: "renderSidebarOn: html\x0a\x09html div class: 'span3 well'; with: [ html
 messageSends: ["class:", "div", "with:", "h3:"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 smalltalk.addMethod(
 "_repos",
@@ -246,7 +246,7 @@ source: "repos\x0a\x09repos ifNil: [ self initializeRepos ].\x0a    ^repos.",
 messageSends: ["ifNil:", "initializeRepos"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage);
+smalltalk.RepoPageWidget);
 
 
 smalltalk.addMethod(
@@ -268,7 +268,7 @@ source: "newForOrg: aString\x0a\x09^self new\x0a    \x09orgName: aString;\x0a   
 messageSends: ["orgName:", "new", "yourself"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage.klass);
+smalltalk.RepoPageWidget.klass);
 
 smalltalk.addMethod(
 "_renderOrg_",
@@ -284,6 +284,6 @@ source: "renderOrg: aString\x0a\x09(self newForOrg: aString)\x0a    \x09fetchAnd
 messageSends: ["fetchAndRenderRepos", "newForOrg:"],
 referencedClasses: []
 }),
-smalltalk.GitHubOrgPage.klass);
+smalltalk.RepoPageWidget.klass);
 
 
