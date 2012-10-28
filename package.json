@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "grunt" : "*",
+    "grunt-less" : "*",
     "grunt-exec" : "*",
+    "grunt-open" : "*",
     "grunt-reload" : "*"
   }
 }
