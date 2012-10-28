@@ -1,0 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Signika);
+
+html body {
+  background-image: url(/images/low_contrast_linen.png);
+  font-family: 'Signika', sans-serif;
+  font-size: 36px;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+  color: #eeeeee;
+}
