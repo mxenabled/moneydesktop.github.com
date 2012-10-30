@@ -1,0 +1,149 @@
+// solid colors
+@slate:           #4D4F53;
+@slate-light:     lighten(@slate, 15%);
+@slate-lighter:   lighten(@slate, 25%);
+@slate-dark:       darken(@slate, 15%);
+@slate-darker:     darken(@slate, 25%);
+
+@green:           #8dc63f;
+@green-light:     lighten(@green, 15%);
+@green-lighter:   lighten(@green, 25%);
+@green-darkish:    darken(@green, 5%);
+@green-dark:       darken(@green, 10%);
+@green-darker:     darken(@green, 15%);
+@green-darkest:    darken(@green, 20%);
+
+@cyan:            #00aeef;
+@cyan-light:      lighten(@cyan, 15%);
+@cyan-lighter:    lighten(@cyan, 25%);
+@cyan-dark:        darken(@cyan, 15%);
+@cyan-darker:      darken(@cyan, 25%);
+
+@red:             #BF311A;
+@red-light:       lighten(@red, 15%);
+@red-lighter:     lighten(@red, 25%);
+@red-dark:         darken(@red, 15%);
+@red-darker:       darken(@red, 25%);
+
+@purple:          #9D3393;
+@purple-light:    lighten(@purple, 15%);
+@purple-lighter:  lighten(@purple, 25%);
+@purple-dark:      darken(@purple, 15%);
+@purple-darker:    darken(@purple, 25%);
+
+@yellow:          #FFC222;
+@yellow-light:    lighten(@yellow, 15%);
+@yellow-lighter:  lighten(@yellow, 25%);
+@yellow-dark:      darken(@yellow, 15%);
+@yellow-darker:    darken(@yellow, 25%);
+
+// Quick Color Classes
+.slate            {color: @slate !important;}
+.slate-light      {color: @slate-light !important;}
+.slate-lighter    {color: @slate-lighter !important;}
+.slate-dark       {color: @slate-dark !important;}
+.slate-darker     {color: @slate-darker !important;}
+
+.green            {color: @green !important;}
+.green-light      {color: @green-light !important;}
+.green-lighter    {color: @green-lighter !important;}
+.green-darkish    {color: @green-darkish !important;}
+.green-dark       {color: @green-dark !important;}
+.green-darker     {color: @green-darker !important;}
+.green-darkest    {color: @green-darkest !important;}
+
+.cyan             {color: @cyan !important;}
+.cyan-light       {color: @cyan-light !important;}
+.cyan-lighter     {color: @cyan-lighter !important;}
+.cyan-dark        {color: @cyan-dark !important;}
+.cyan-darker      {color: @cyan-darker !important;}
+
+.red              {color: @red !important;}
+.red-light        {color: @red-light !important;}
+.red-lighter      {color: @red-lighter !important;}
+.red-dark         {color: @red-dark !important;}
+.red-darker       {color: @red-darker !important;}
+
+.purple           {color: @purple !important;}
+.purple-light     {color: @purple-light !important;}
+.purple-lighter   {color: @purple-darker !important;}
+.purple-dark      {color: @purple-dark !important;}
+.purple-darker    {color: @purple-darker !important;}
+
+.yellow           {color: @yellow !important;}
+.yellow-light     {color: @yellow-light !important;}
+.yellow-lighter   {color: @yellow-lighter !important;}
+.yellow-dark      {color: @yellow-dark !important;}
+.yellow-darker    {color: $yellow-darker !important;}
+
+
+/* #Embedded Fonts
+================================================== */
+
+@font-face {
+  font-family: 'AvantGardeTNormal';
+  src: url('../fonts/avant_garde/avant_garde_t.-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/avant_garde/avant_garde_t.-webfont.woff') format('woff'),
+       url('../fonts/avant_garde/avant_garde_t.-webfont.ttf')  format('truetype'),
+       url('../fonts/avant_garde/avant_garde_t.-webfont.svg#AvantGardeTNormal') format('svg');
+       font-weight: light;
+       font-style: normal;
+  }
+
+@font-face {
+  font-family: 'sofiapro_light_macroman';
+  src: url('../fonts/sofiapro_light_macroman/SofiaProLight-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/sofiapro_light_macroman/SofiaProLight-webfont.woff') format('woff'),
+       url('../fonts/sofiapro_light_macroman/SofiaProLight-webfont.ttf')  format('truetype'),
+       url('../fonts/sofiapro_light_macroman/SofiaProLight-webfont.svg#sofiapro_light_macroman') format('svg');
+       font-weight: light;
+       font-style: light;
+  }
+
+@font-face {
+    font-family: 'DroidSerifRegular';
+    src: url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Regular-webfont.eot');
+    src: url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Regular-webfont.woff') format('woff'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Regular-webfont.svg#DroidSerifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DroidSerifItalic';
+    src: url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Italic-webfont.eot');
+    src: url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Italic-webfont.woff') format('woff'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Italic-webfont.ttf') format('truetype'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Italic-webfont.svg#DroidSerifItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DroidSerifBold';
+    src: url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Bold-webfont.eot');
+    src: url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Bold-webfont.woff') format('woff'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-Bold-webfont.svg#DroidSerifBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DroidSerifBoldItalic';
+    src: url('../fonts/Droid-Serif-fontfacekit/DroidSerif-BoldItalic-webfont.eot');
+    src: url('../fonts/Droid-Serif-fontfacekit/DroidSerif-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-BoldItalic-webfont.woff') format('woff'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-BoldItalic-webfont.ttf') format('truetype'),
+         url('../fonts/Droid-Serif-fontfacekit/DroidSerif-BoldItalic-webfont.svg#DroidSerifBoldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -1,8 +1,338 @@
-body {
-  background-color: red !important;
-  padding: 200px !important;
+/*---------------------------------------------------
+    VARIABLES
+-----------------------------------------------------*/
+// solid colors
+@white:           #ffffff;
+@white-off:        darken(@white, 5%);
+@white-dark:       darken(@white, 15%);
+@white-darker:     darken(@white, 25%);
+
+@slate:           #4D4F53;
+@slate-light:     lighten(@slate, 15%);
+@slate-lighter:   lighten(@slate, 50%);
+@slate-lightest:  lighten(@slate, 60%);
+@slate-dark:       darken(@slate, 15%);
+@slate-darker:     darken(@slate, 25%);
+
+@green:           #8dc63f;
+@green-light:     lighten(@green, 15%);
+@green-lighter:   lighten(@green, 25%);
+@green-darkish:    darken(@green, 5%);
+@green-dark:       darken(@green, 10%);
+@green-darker:     darken(@green, 15%);
+@green-darkest:    darken(@green, 20%);
+
+@cyan:            #00aeef;
+@cyan-light:      lighten(@cyan, 15%);
+@cyan-lighter:    lighten(@cyan, 25%);
+@cyan-dark:        darken(@cyan, 15%);
+@cyan-darker:      darken(@cyan, 25%);
+
+@red:             #BF311A;
+@red-light:       lighten(@red, 15%);
+@red-lighter:     lighten(@red, 25%);
+@red-dark:         darken(@red, 15%);
+@red-darker:       darken(@red, 25%);
+
+@purple:          #9D3393;
+@purple-light:    lighten(@purple, 15%);
+@purple-lighter:  lighten(@purple, 25%);
+@purple-dark:      darken(@purple, 15%);
+@purple-darker:    darken(@purple, 25%);
+
+@yellow:          #FFC222;
+@yellow-light:    lighten(@yellow, 15%);
+@yellow-lighter:  lighten(@yellow, 25%);
+@yellow-dark:      darken(@yellow, 15%);
+@yellow-darker:    darken(@yellow, 25%);
+
+// Quick Color Classes
+.slate            {color: @slate !important;}
+.slate-light      {color: @slate-light !important;}
+.slate-lighter    {color: @slate-lighter !important;}
+.slate-dark       {color: @slate-dark !important;}
+.slate-darker     {color: @slate-darker !important;}
+
+.green            {color: @green !important;}
+.green-light      {color: @green-light !important;}
+.green-lighter    {color: @green-lighter !important;}
+.green-darkish    {color: @green-darkish !important;}
+.green-dark       {color: @green-dark !important;}
+.green-darker     {color: @green-darker !important;}
+.green-darkest    {color: @green-darkest !important;}
+
+.cyan             {color: @cyan !important;}
+.cyan-light       {color: @cyan-light !important;}
+.cyan-lighter     {color: @cyan-lighter !important;}
+.cyan-dark        {color: @cyan-dark !important;}
+.cyan-darker      {color: @cyan-darker !important;}
+
+.red              {color: @red !important;}
+.red-light        {color: @red-light !important;}
+.red-lighter      {color: @red-lighter !important;}
+.red-dark         {color: @red-dark !important;}
+.red-darker       {color: @red-darker !important;}
+
+.purple           {color: @purple !important;}
+.purple-light     {color: @purple-light !important;}
+.purple-lighter   {color: @purple-darker !important;}
+.purple-dark      {color: @purple-dark !important;}
+.purple-darker    {color: @purple-darker !important;}
+
+.yellow           {color: @yellow !important;}
+.yellow-light     {color: @yellow-light !important;}
+.yellow-lighter   {color: @yellow-lighter !important;}
+.yellow-dark      {color: @yellow-dark !important;}
+.yellow-darker    {color: @yellow-darker !important;}
+
+
+/*---------------------------------------------------
+    MIXINS
+-----------------------------------------------------*/
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+}
+.bw-gradient(@color: #F5F5F5, @start: 0, @stop: 255) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, rgb(@start,@start,@start)),
+                               color-stop(1, rgb(@stop,@stop,@stop)));
+  background: -ms-linear-gradient(bottom,
+                                  rgb(@start,@start,@start) 0%,
+                                  rgb(@start,@start,@start) 100%);
+  background: -moz-linear-gradient(center bottom,
+                                   rgb(@start,@start,@start) 0%,
+                                   rgb(@stop,@stop,@stop) 100%);
+}
+.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+  border-top: solid 1px @top-color;
+  border-left: solid 1px @left-color;
+  border-right: solid 1px @right-color;
+  border-bottom: solid 1px @bottom-color;
+}
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+}
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+.transition-duration(@duration: 0.2s) {
+  -moz-transition-duration: @duration;
+  -webkit-transition-duration: @duration;
+  transition-duration: @duration;
+}
+.rotation(@deg:5deg){
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+.scale(@ratio:1.5){
+  -webkit-transform:scale(@ratio);
+  -moz-transform:scale(@ratio);
+  transform:scale(@ratio);
+}
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+  -moz-column-width: @colwidth;
+  -moz-column-count: @colcount;
+  -moz-column-gap: @colgap;
+  -moz-column-rule-color: @columnRuleColor;
+  -moz-column-rule-style: @columnRuleStyle;
+  -moz-column-rule-width: @columnRuleWidth;
+  -webkit-column-width: @colwidth;
+  -webkit-column-count: @colcount;
+  -webkit-column-gap: @colgap;
+  -webkit-column-rule-color: @columnRuleColor;
+  -webkit-column-rule-style: @columnRuleStyle;
+  -webkit-column-rule-width: @columnRuleWidth;
+  column-width: @colwidth;
+  column-count: @colcount;
+  column-gap: @colgap;
+  column-rule-color: @columnRuleColor;
+  column-rule-style: @columnRuleStyle;
+  column-rule-width: @columnRuleWidth;
+}
+.translate(@x:0, @y:0) {
+  -moz-transform: translate(@x, @y);
+  -webkit-transform: translate(@x, @y);
+  -o-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y);
+  transform: translate(@x, @y);
 }
 
-.well {
-  background-color: red !important;
+
+
+/*---------------------------------------------------
+    BASE CSS
+-----------------------------------------------------*/
+
+.amberBody {
+  background: @white-off;
+  padding-top: 20px;
+}
+
+h1, h2, h3, h4 {
+  font-family: helvetica, verdana, arial, sans-serif;
+  color: @slate;
+}
+
+a {
+  color: @slate;
+  &:hover {
+    color: @slate-dark;
+  }
+}
+
+/*---------------------------------------------------
+    HEADER
+-----------------------------------------------------*/
+.header {
+  p {
+    text-align: center;
+    margin: 0;
+    a {
+      line-height: 0px;
+      font-size: 14px;
+    }
+  }
+  .header-logo {
+    background: @slate;
+    .rounded(5px);
+    h1 {
+      color: @white-off;
+      font-size: 24px;
+      padding: 15px 10px 15px 100px;
+      background: url('/images/logo-header.png') 15px center no-repeat;
+    }
+  }
+}
+
+/*---------------------------------------------------
+    FOOTER
+-----------------------------------------------------*/
+footer {
+  hr {
+    margin: 0;
+  }
+  p {
+    text-align: center;
+    font-size: 12px;
+    color: @slate-light;
+  }
+}
+
+
+/*---------------------------------------------------
+    CARDS
+-----------------------------------------------------*/
+// Based off thumbnail
+.card {
+  position: relative;
+  margin: 10px 0;
+  padding: 39px 19px 14px;
+  *padding-top: 19px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  &:after {
+    content: attr(title) "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #9da0a4;
+    -webkit-border-radius: 4px 0 4px 0;
+       -moz-border-radius: 4px 0 4px 0;
+            border-radius: 4px 0 4px 0;
+  }
+
+  &.card-logo {}
+  h3 {
+    color: @slate;
+    text-align: center;
+    font-size: 17px;
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+  .btn {
+    margin: 0;
+    .border-radius(0, 5px, 5px, 0);
+  }
+  .caption {
+    margin-top: 20px;
+    background: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    border-bottom: none;
+    .border-radius(5px, 0, 0, 5px);
+    p {
+      font-size: 12px;
+      line-height: 13px;
+    }
+    hr {
+      margin: 15px auto 0 auto;
+    }
+  }
+  .card-time {
+    font-size: 10px;
+    text-align: center;
+    color: @slate-lighter;
+    margin: 5px 0 -5px 0;
+  }
 }

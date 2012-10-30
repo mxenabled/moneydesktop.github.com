@@ -21,8 +21,8 @@ module.exports = function(grunt) {
     },
 
     watch:{
-        files:['index.html', 'css/repos.css', 'less/repos.less'],
-        tasks:'default less reload'
+        files:['index.html',  'less/repos.less'],
+        tasks:'default less'
     }
 
   });
